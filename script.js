@@ -610,4 +610,12 @@ function initCustomCursor() {
 // Initialize custom cursor on desktop devices
 if (window.innerWidth > 768 && !('ontouchstart' in window)) {
     initCustomCursor();
+
 }
+
+const hamburger = document.getElementById("hamburger");
+const navMenu = document.getElementById("nav-menu");
+
+hamburger.addEventListener("click", () => {
+navMenu.classList.toggle("active");
+});
