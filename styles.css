@@ -1226,3 +1226,56 @@ width:24px;
 
 
 
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+    z-index: 1101;
+  }
+
+  .hamburger span {
+    width: 25px;
+    height: 3px;
+    background: #333;
+    border-radius: 3px;
+    transition: 0.3s ease;
+  }
+
+  .nav-menu {
+    position: fixed;
+    left: -100%;
+    top: 70px;
+    width: 100%;
+    background: #fff;
+    flex-direction: column;
+    text-align: center;
+    transition: 0.3s ease;
+    padding: 20px 0;
+    z-index: 1100;
+  }
+
+  .nav-menu.active {
+    left: 0;
+  }
+
+  .nav-menu li {
+    margin: 15px 0;
+  }
+
+  .hamburger.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+}
+
+
+
