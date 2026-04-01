@@ -619,3 +619,36 @@ const navMenu = document.getElementById("nav-menu");
 hamburger.addEventListener("click", () => {
 navMenu.classList.toggle("active");
 });
+
+
+
+const hamburger = document.getElementById("hamburger");
+const navMenu = document.getElementById("nav-menu");
+const navLinks = document.querySelectorAll(".nav-link");
+
+// Open / Close menu
+hamburger.addEventListener("click", () => {
+  hamburger.classList.toggle("active");
+  navMenu.classList.toggle("active");
+});
+
+// Click menu item → close + scroll
+navLinks.forEach(link => {
+  link.addEventListener("click", function(e) {
+
+    // Close menu
+    hamburger.classList.remove("active");
+    navMenu.classList.remove("active");
+
+    // Smooth scroll
+    if(this.getAttribute("href").startsWith("#")){
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute("href"));
+
+      window.scrollTo({
+        top: target.offsetTop - 70,
+        behavior: "smooth"
+      });
+    }
+  });
+});
